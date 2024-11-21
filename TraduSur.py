@@ -57,8 +57,9 @@ def manejar_mayusculas(palabra_original, palabra_traducida):
     return palabra_traducida
 
 # Función para separar las palabras de la puntuación usando expresiones regulares
+# Se utiliza la libreria "re" para que separe los signos de las palabras
 def separar_palabras_y_puntuacion(oracion):
-    return re.findall(r'\b\w+\b|[^\w\s]', oracion)
+    return re.findall(r'\b\w+\b|[^\w\s]', oracion) 
 
 # Función para traducir una oración completa
 def traducir_oracion(oracion, direccion):
@@ -80,7 +81,7 @@ def traducir_oracion(oracion, direccion):
 
 # Función para mostrar las opciones de traducción
 def mostrar_menu():
-    print("\nOpciones de traducción:")
+    print("\nOpciones de traducción:") #\n para hacer el salto de línea
     print("1. Traducir de Inglés a Español")
     print("2. Traducir de Español a Inglés")
     print("3. Salir")
@@ -110,5 +111,5 @@ def traductor():
         oracion_traducida = traducir_oracion(oracion, direccion)
         print(f"La traducción es: {oracion_traducida}\n")
 
-# Ejecutar el traductor
+# Ejecutar el programa TraduSur
 traductor()
