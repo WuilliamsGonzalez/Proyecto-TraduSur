@@ -13,6 +13,7 @@
 ## Requisitos
 
 - Python 3.x
+- Pip instalación de libería Google Translate
 - Visual Studio CODE o Pycharm
 
 ## Instalación
@@ -33,6 +34,11 @@ Al ejecutar el programa, se presentará un menú con tres opciones:
        (3)Salir
 El usuario podrá ingresar una oración o palabra para traducir, y el programa devolverá la traducción correspondiente.
 
+Ejecuta en la terminal de Powershell, para instalar la librería:
+
+```bash
+   pip install gtts
+  ```
 Ejemplo de uso:
 
 Entrada:
@@ -43,21 +49,23 @@ Salida:
     ```
     Traducción: Hola, ¿cómo estás?
     ```
+
 Estructura del Código
 Diccionario de Traducción:
-Se utilizan dos diccionarios para realizar las traducciones entre inglés y español:
-python
-Copiar código
-diccionario_ingles_a_espanol = { ... }
-diccionario_espanol_a_ingles = { ... }
+-Se utilizan dos diccionarios para realizar las traducciones entre inglés y español:
+
+- diccionario_ingles_a_espanol = { ... }
+- diccionario_espanol_a_ingles = { ... }
 
 Carpeta PDF
-Este repositorio incluye la documentación que se usó para crear el programa, puedes descargarlo libremente.
+- Este repositorio incluye la documentación que se usó para crear el programa, puedes descargarlo libremente.
 
 Contribuciones
-Este proyecto es de código abierto. Si deseas mejorar el traductor o agregar nuevas características, siéntete libre de hacer un fork del repositorio y enviar un pull request. Cualquier contribución es bienvenida.
+- Este proyecto es de código abierto. Si deseas mejorar el traductor o agregar nuevas características, siéntete libre de hacer un fork del repositorio y enviar un pull request. Cualquier contribución es bienvenida.
 
 Licencia
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+- Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
 **¡Gracias por usar TraduSur!** Esperamos que este traductor interactivo te sea útil para tus proyectos y aprendizaje.
+
+Proyecto creado por **Wuilliams González**
