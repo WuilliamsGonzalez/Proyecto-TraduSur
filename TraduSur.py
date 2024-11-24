@@ -38,6 +38,10 @@ diccionario_espanol_a_ingles = {v: k for k, v in diccionario_ingles_a_espanol.it
 
 # Función para traducir una palabra
 def traducir_palabra(palabra, direccion):
+    """
+    Función para traducir palabras el metodo está hecho para retornar la palabra, por lo que si no encuentra la palabra en el diccionario
+    la deja tal cual, y la repite.
+    """
     # Convertir la palabra a minúsculas para evitar problemas con mayúsculas
     palabra = palabra.lower()
     
@@ -56,9 +60,12 @@ def manejar_mayusculas(palabra_original, palabra_traducida):
         return palabra_traducida.capitalize()
     return palabra_traducida
 
-# Función para separar las palabras de la puntuación usando expresiones regulares
-# Se utiliza la libreria "re" para que separe los signos de las palabras
+
 def separar_palabras_y_puntuacion(oracion):
+    """
+    Función para separar las palabras de la puntuación usando expresiones regulares
+    Se utiliza la libreria "re" para que separe los signos de las palabras
+    """
     return re.findall(r'\b\w+\b|[^\w\s]', oracion) 
 
 # Función para traducir una oración completa
@@ -69,7 +76,7 @@ def traducir_oracion(oracion, direccion):
     oracion_traducida = []
     
     for palabra in elementos:
-        # Traducir cada palabra, pero dejar los signos de puntuación intactos
+        # Traducir las palabras, pero dejar los signos de puntuación y asi no tirar error
         if palabra.isalpha():
             traduccion = traducir_palabra(palabra, direccion)
             traduccion_mayuscula = manejar_mayusculas(palabra, traduccion)
@@ -101,7 +108,7 @@ def traductor():
             direccion = "espanol_a_ingles"
             print("\nTraducción de Español a Inglés")
         elif direccion == "3":
-            print("\n¡Gracias por usar Surtraducciones! ¡Hasta luego!")
+            print("\n¡Gracias por usar TraduSur! ¡Hasta luego!")
             break
         else:
             print("\nOpción no válida. Elige una opción válida.")
@@ -110,6 +117,10 @@ def traductor():
         oracion = input("\nIntroduce la oración que deseas traducir: ")
         oracion_traducida = traducir_oracion(oracion, direccion)
         print(f"La traducción es: {oracion_traducida}\n")
+
+    """
+    una vez traducido se convierte a audio, descargar google trans $ pip install googletrans
+    """
 
 # Ejecutar el programa TraduSur
 traductor()
